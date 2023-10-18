@@ -18,8 +18,7 @@ public class Persona {
     private char sesso;
 
 
-    @ManyToMany
-    @JoinTable(name = "persona_partecipazione", inverseJoinColumns = @JoinColumn(name = "persona"), joinColumns = @JoinColumn(name = "partecipazione"))
+    @OneToMany(mappedBy = "persona")
     private List<Partecipazione> lista_partecipazioni;
 
     public Persona() {
