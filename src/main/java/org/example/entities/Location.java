@@ -19,10 +19,9 @@ public class Location {
     public Location() {
     }
 
-    public Location(String nome, String citta, List<Evento> lista_eventi) {
+    public Location(String nome, String citta) {
         this.nome = nome;
         this.citta = citta;
-        this.lista_eventi = lista_eventi;
     }
 
     public long getId() {

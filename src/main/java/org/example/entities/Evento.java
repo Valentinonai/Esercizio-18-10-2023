@@ -18,7 +18,7 @@ public class Evento {
     private TipoEvento tipoEvento;
     private int numeroMassimoPartecipanti;
 
-    @OneToMany(mappedBy = "evento")
+    @OneToMany(mappedBy = "evento", cascade = CascadeType.ALL)
     private Set<Partecipazione> lista_partecipazioni;
 
     @ManyToOne
