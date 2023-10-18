@@ -9,7 +9,8 @@ public class Partecipazione {
     @GeneratedValue
     private long id;
 
-    @OneToMany(mappedBy = "lista_partecipazioni")
+    @ManyToOne
+    @JoinColumn(name = "persona_id")
     private Persona persona;
 
     @ManyToOne

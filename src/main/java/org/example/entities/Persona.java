@@ -17,8 +17,8 @@ public class Persona {
     private LocalDate data_di_nascita;
     private char sesso;
 
-    @ManyToOne
-    @JoinColumn(name = "partecipazioni_id")
+
+    @OneToMany(mappedBy = "persona")
     private List<Partecipazione> lista_partecipazioni;
 
     public Persona() {
