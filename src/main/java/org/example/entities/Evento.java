@@ -80,6 +80,22 @@ public class Evento {
         this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
     }
 
+    public Set<Partecipazione> getLista_partecipazioni() {
+        return lista_partecipazioni;
+    }
+
+    public void setLista_partecipazioni(Set<Partecipazione> lista_partecipazioni) {
+        this.lista_partecipazioni = lista_partecipazioni;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
     @Override
     public String toString() {
         return "Evento{" +
@@ -89,6 +105,8 @@ public class Evento {
                 ", descrizione='" + descrizione + '\'' +
                 ", tipoEvento=" + tipoEvento +
                 ", numeroMassimoPartecipanti=" + numeroMassimoPartecipanti +
+                ", lista_partecipazioni=" + lista_partecipazioni +
+                ", location=" + location +
                 '}';
     }
 }
