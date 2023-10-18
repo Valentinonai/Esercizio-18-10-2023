@@ -1,9 +1,6 @@
 package org.example.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -20,7 +17,9 @@ public class Persona {
     private LocalDate data_di_nascita;
     private char sesso;
 
-    private List<Partecipazione> lista_partecipazione;
+    @ManyToOne
+    @JoinColumn(name = "partecipazioni_id")
+    private List<Partecipazione> lista_partecipazioni;
 
 
 }
