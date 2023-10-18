@@ -41,10 +41,10 @@ public class Application {
         Partecipazione part1 = new Partecipazione(pers1, ev2);
         part1.setStato(Stato.CONFERMATA);
         partDao.save(part1);
-
+        em.refresh(ev1);
         long x = ev1.getId();
-
-        System.out.println(pers1);
+        em.refresh(pers1);
+        pers1.getLista_partecipazioni().forEach(System.out::println);
         evdao.delete(x);
         em.close();
         JpaUtil.close();

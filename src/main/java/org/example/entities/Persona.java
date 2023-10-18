@@ -95,7 +95,7 @@ public class Persona {
                 ", email='" + email + '\'' +
                 ", data_di_nascita=" + data_di_nascita +
                 ", sesso=" + sesso +
-                ", lista_partecipazioni=" + lista_partecipazioni +
+//                ", lista_partecipazioni=" + lista_partecipazioni +
                 '}';
     }
 }
