@@ -1,42 +1,42 @@
 package org.example.entities;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "partecipazioni")
 public class Partecipazione {
+    @ManyToMany
+    @JoinTable(name = "persona_partecipazione", joinColumns = @JoinColumn(name = "partecipazione"), inverseJoinColumns = @JoinColumn(name = "persona"))
+    Set<Persona> persona;
     @Id
     @GeneratedValue
     private long id;
-
-    @ManyToOne
-    @JoinColumn(name = "persona_id")
-    private Persona persona;
-
     @ManyToOne
     @JoinColumn(name = "evento_id")
     private Evento evento;
     @Enumerated(EnumType.STRING)
     private Stato stato;
 
-    public Partecipazione() {
-    }
-
-    public Partecipazione(Persona persona, Evento evento) {
+    public Partecipazione(Set<Persona> persona, Evento evento) {
         this.persona = persona;
         this.evento = evento;
     }
+
+    public Partecipazione() {
+    }
+
 
     public long getId() {
         return id;
     }
 
 
-    public Persona getPersona() {
+    public Set<Persona> getPersona() {
         return persona;
     }
 
-    public void setPersona(Persona persona) {
+    public void setPersona(Set<Persona> persona) {
         this.persona = persona;
     }
 
