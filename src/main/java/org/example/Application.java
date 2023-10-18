@@ -43,6 +43,8 @@ public class Application {
         partDao.save(part1);
 
         long x = ev1.getId();
+
+        System.out.println(pers1);
         evdao.delete(x);
         em.close();
         JpaUtil.close();
