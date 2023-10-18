@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "persone")
@@ -18,6 +19,8 @@ public class Persona {
     private String email;
     private LocalDate data_di_nascita;
     private char sesso;
+
+    private List<Partecipazione> lista_partecipazione;
 
 
 }

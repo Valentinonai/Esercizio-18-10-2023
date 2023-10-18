@@ -6,17 +6,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "partecipazioni")
-public class Partecipazione {
+@Table(name = "locations")
+public class Location {
     @Id
     @GeneratedValue
     private long id;
 
-    private Persona persona;
-
-    private Evento evento;
-
-    private Stato stato;
-
-
+    private String nome;
+    private String citta;
 }
